@@ -5,6 +5,8 @@
  */
 package Modelo.Consulta;
 
+import Modelo.Paciente.Paciente;
+
 /**
  *
  * @author Roque
@@ -14,7 +16,7 @@ public class Consulta {
     private String motivo;
     private String observacion;
     private String receta;
-    private int rela_pac;
+    private int id_paciente;
     private String fecha;
 
     public String getFecha() {
@@ -49,14 +51,20 @@ public class Consulta {
         this.receta = receta;
     }
 
-    public int getRela_pac() {
-        return rela_pac;
+    public int getId_paciente() {
+        return id_paciente;
     }
 
-    public void setRela_pac(int rela_pac) {
-        this.rela_pac = rela_pac;
+    public void setId_paciente(int id_paciente) {
+        this.id_paciente = id_paciente;
     }
     
-    
+    public void procesarPaciente(Paciente p){
+       
+        this.setId_paciente(p.getId_paciente());
+        
+      
+       
+    }
     
 }

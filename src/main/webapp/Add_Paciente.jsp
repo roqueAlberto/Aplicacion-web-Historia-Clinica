@@ -51,19 +51,13 @@
                     <div class="sidebar-brand-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
-                  <!--  <div class="sidebar-brand-text mx-3">Dr. Billordo</div>-->
+                   <div class="sidebar-brand-text mx-3">Dr. Billordo</div>
                 </a>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0" />
 
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">
-                        <i class="fas fa-door-open"></i>
-                        <span>Bienvenido</span></a
-                    >
-                </li>
+               
 
                 <!-- Divider -->
                 <hr class="sidebar-divider" />
@@ -173,7 +167,7 @@
                             </li>
 
                             <!-- Nav Item - User Information -->
-                         <!--   <li class="nav-item dropdown no-arrow">
+                          <li class="nav-item dropdown no-arrow">
                                 <a
                                     class="nav-link dropdown-toggle"
                                     href="#"
@@ -191,7 +185,7 @@
                                         src="img/undraw_profile.svg"
                                         />
                                 </a>
-                            </li> -->
+                            </li> 
                         </ul>
                     </nav>
                     <!-- End of Topbar -->

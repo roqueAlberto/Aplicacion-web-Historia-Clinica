@@ -9,14 +9,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>Ficha del paciente</title>
 
@@ -30,7 +25,6 @@
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet"
             />
-
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet" />
     </head>
@@ -51,19 +45,13 @@
                     <div class="sidebar-brand-icon">
                         <i class="fas fa-user-md"></i>
                     </div>
-                 <!--   <div class="sidebar-brand-text mx-3">Dr. Billordo</div>-->
+                    <div class="sidebar-brand-text mx-3">Dr. Billordo</div>
                 </a>
 
                 <!-- Divider -->
                 <hr class="sidebar-divider my-0" />
 
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <i class="fas fa-door-open"></i>
-                        <span>Bienvenido</span></a
-                    >
-                </li>
+
 
                 <!-- Divider -->
                 <hr class="sidebar-divider" />
@@ -173,7 +161,7 @@
                             </li>
 
                             <!-- Nav Item - User Information -->
-                          <!--  <li class="nav-item dropdown no-arrow">
+                            <li class="nav-item dropdown no-arrow">
                                 <a
                                     class="nav-link dropdown-toggle"
                                     href="index.jsp"
@@ -191,19 +179,17 @@
                                         src="img/undraw_profile.svg"
                                         />
                                 </a>
-                            </li> -->
+                            </li> 
                         </ul>
                     </nav>
-                    <!-- End of Topbar -->
 
-                    <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-lg-12">
-                                <!-- Dropdown Card Example -->
+
                                 <div class="card shadow mb-4">
                                     <form action="Servidor?menu=Ficha_paciente"  method="POST" >
-                                        <!-- Card Header - Dropdown -->
+
                                         <div
                                             class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
                                             >
@@ -226,7 +212,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <!-- Card Body -->
+
                                         <div class="card-body">
                                             <div class="form-group d-flex">
                                                 <div class="col-sm-2">
@@ -235,10 +221,10 @@
                                                     </label>
                                                     <input
                                                         type="text"
-                                                        name="ape"
+                                                        name="apellido"
                                                         class="form-control"
                                                         id="ape"
-                                                        value="${ape}"
+                                                        value="${apellido_f}"
 
                                                         required
                                                         />
@@ -254,10 +240,10 @@
                                                     </label>
                                                     <input
                                                         type="text"
-                                                        name="nom"
+                                                        name="nombre"
                                                         class="form-control"
                                                         id="nom"
-                                                        value="${nom}"
+                                                        value="${nombre_f}"
 
                                                         required
                                                         />
@@ -269,10 +255,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="dn"
+                                                        name="dni"
                                                         class="form-control"
                                                         id="dn"
-                                                        value="${dn}"
+                                                        value="${dni_f}"
                                                         required
 
                                                         />
@@ -287,7 +273,7 @@
                                                         name="fecha_n"
                                                         class="form-control"
                                                         id="fecha_n"
-                                                        value="${fecha_n}"
+                                                        value="${fechaNac_f}"
                                                         required
                                                         />
                                                 </div>
@@ -303,7 +289,7 @@
 
                                                         <c:forEach var="l_sexo" items="${lista_sexo}">
 
-                                                            <c:set var="val" value="${sex}"/>
+                                                            <c:set var="val" value="${genero_f}"/>
 
                                                             <c:choose>
 
@@ -332,10 +318,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="dom"
+                                                        name="domicilio"
                                                         class="form-control"
                                                         id="dom"
-                                                        value="${dom}"
+                                                        value="${domicilio_f}"
                                                         />
                                                 </div>
 
@@ -347,7 +333,7 @@
 
                                                         <c:forEach var="l_social" items="${lista_osocial}">
 
-                                                            <c:set var="valor" value="${obra_s}"/>
+                                                            <c:set var="valor" value="${obraSocial_f}"/>
 
                                                             <c:choose>
 
@@ -378,10 +364,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="cel"
+                                                        name="telefono"
                                                         class="form-control"
                                                         id="cel"
-                                                        value="${cel}"
+                                                        value="${celular_f}"
 
                                                         />
                                                 </div>
@@ -394,10 +380,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="lugar_t"
+                                                        name="lugar_trabajo"
                                                         class="form-control"
                                                         id="lugar_t"
-                                                        value="${lugar_t}"
+                                                        value="${direccionTrabajo_f}"
                                                         />
                                                 </div>
 
@@ -407,10 +393,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="antec"
+                                                        name="antecedentes"
                                                         class="form-control"
                                                         id="antec"
-                                                        value="${antec}"
+                                                        value="${antecedentes_f}"
                                                         />
                                                 </div>
 
@@ -420,10 +406,10 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="aler"
+                                                        name="alergia"
                                                         class="form-control"
                                                         id="aler"
-                                                        value="${aler}"
+                                                        value="${alergias_f}"
                                                         />
                                                 </div>
 
@@ -433,14 +419,13 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="med"
+                                                        name="receta"
                                                         class="form-control"
                                                         id="med"
-                                                        value="${med}"
+                                                        value="${receta_f}"
                                                         />
                                                 </div>
                                             </div>
-
                                             <div class="form-group d-flex">
                                                 <div class="col-sm-3">
                                                     <label class="font-weight-bold text-gray-900"
@@ -448,15 +433,14 @@
                                                     >
                                                     <input
                                                         type="text"
-                                                        name="res"
+                                                        name="responsable"
                                                         class="form-control"
                                                         id="res"
-                                                        value="${res}"
+                                                        value="${responsable_f}"
                                                         />
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="form-group text-center">
                                             <div class="col-sm">
                                                 <button
@@ -471,48 +455,23 @@
                                                         ></span>
                                                     <span class="text">Actualizar datos</span>
                                                 </button>
-
-
                                             </div>
                                         </div>
                                     </form>                 
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- /.container-fluid -->
-                </div>
-                <!-- End of Main Content -->
-
-                <!-- Footer -->
-              <!--  <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Roque</span>
-                        </div>
-                    </div>
-                </footer> -->
-                <!-- End of Footer -->
+                    </div>               
+                </div>             
             </div>
-            <!-- End of Content Wrapper -->
         </div>
-        <!-- End of Page Wrapper -->
 
-        <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
-
-
-
-        <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom scripts for all pages-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>  
         <script src="js/sb-admin-2.min.js"></script>
     </body>
 </html>

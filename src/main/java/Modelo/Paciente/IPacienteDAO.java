@@ -5,20 +5,21 @@
  */
 package Modelo.Paciente;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Roque
  */
-public interface PacienteDAO {
+public interface IPacienteDAO {
 
     //Metodos
-    List listar();
+    public ArrayList<Paciente> listar();
 
     public void update(Paciente p);
 
-    public Paciente buscar(String dni);
+    public Paciente getPaciente(String dni);
 
     public void agregar(Paciente pac);
 
@@ -35,5 +36,7 @@ public interface PacienteDAO {
     public int calcularEdad(String f_nac);
 
     public void getFechaNacimiento();
+
+    public List listarSexo();
 
 }

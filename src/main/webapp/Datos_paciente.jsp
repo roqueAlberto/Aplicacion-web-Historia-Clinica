@@ -34,14 +34,14 @@
                     CONSULTORIO
                 </div>
                 <!-- SideBar User info -->
-              <!--  <div class="full-box dashboard-sideBar-UserInfo">
+                <div class="full-box dashboard-sideBar-UserInfo">
                     <figure class="full-box">
                         <img src="./assets/img/user.png" alt="UserIcon" />
                         <figcaption class="text-center text-titles">
                             Argentino Billordo
                         </figcaption>
                     </figure>
-                </div> -->
+                </div> 
                 <!-- SideBar Menu -->
                 <ul class="list-unstyled full-box dashboard-sideBar-Menu">
                     <li>

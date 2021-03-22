@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author Roque
  */
-public class ObraSocialDAOImpl implements ObraSocialDAO{
+public class ObraSocialDAOImpl implements IObraSocialDAO{
 
     Connection conexion;
     PreparedStatement ps;

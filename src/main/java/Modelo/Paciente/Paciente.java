@@ -5,6 +5,8 @@
  */
 package Modelo.Paciente;
 
+import Modelo.ObraSocial.Obra_Social;
+
 public class Paciente {
 
     private int id_paciente;
@@ -17,25 +19,26 @@ public class Paciente {
     private String celular;
     private String lugar_trabajo;
     private String antecedentes;
-    private String alergico;
+    private String alergia;
     private String medicamento;
-    private int rela_sexo;
-    private int rela_obra_social;
+    private int id_sexo;
     private String responsable;
     private String domicilio;
-    private String desc_obraSocial;
+    private String desc_sexo;
+    public Obra_Social obra_social;
 
-    public String getDesc_obraSocial() {
-        return desc_obraSocial;
+    public Paciente() {
+        obra_social = new Obra_Social();
     }
 
-    public void setDesc_obraSocial(String desc_obraSocial) {
-        this.desc_obraSocial = desc_obraSocial;
+    public String getDesc_sexo() {
+
+        return desc_sexo;
     }
-    
-    
-    
-    
+
+    public void setDesc_sexo(String desc_sexo) {
+        this.desc_sexo = desc_sexo;
+    }
 
     public int getId_paciente() {
         return id_paciente;
@@ -43,14 +46,6 @@ public class Paciente {
 
     public void setId_paciente(int id_paciente) {
         this.id_paciente = id_paciente;
-    }
-
-    public int getRela_obra_social() {
-        return rela_obra_social;
-    }
-
-    public void setRela_obra_social(int rela_obra_social) {
-        this.rela_obra_social = rela_obra_social;
     }
 
     public String getDomicilio() {
@@ -133,12 +128,12 @@ public class Paciente {
         this.antecedentes = antecedentes;
     }
 
-    public String getAlergico() {
-        return alergico;
+    public String getAlergia() {
+        return alergia;
     }
 
-    public void setAlergico(String alergico) {
-        this.alergico = alergico;
+    public void setAlergia(String alergia) {
+        this.alergia = alergia;
     }
 
     public String getMedicamento() {
@@ -149,20 +144,15 @@ public class Paciente {
         this.medicamento = medicamento;
     }
 
-    public int getRela_sexo() {
-        return rela_sexo;
+    public int getId_sexo() {
+        return id_sexo;
     }
 
-    public void setRela_sexo(int rela_sexo) {
-        this.rela_sexo = rela_sexo;
+    public void setId_sexo(int id_sexo) {
+        this.id_sexo = id_sexo;
     }
+    
+    
 
-    public int getRela_Obra_social() {
-        return rela_obra_social;
-    }
-
-    public void setRela_Obra_social(int obra_social) {
-        this.rela_obra_social = obra_social;
-    }
-
+    
 }

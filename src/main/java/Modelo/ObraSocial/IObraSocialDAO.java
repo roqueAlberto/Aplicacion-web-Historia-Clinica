@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author Roque
  */
-public interface ObraSocialDAO {
+public interface IObraSocialDAO {
     
     public List listar();
     

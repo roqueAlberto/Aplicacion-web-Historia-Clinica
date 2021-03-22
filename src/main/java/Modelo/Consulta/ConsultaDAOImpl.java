@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author Roque
  */
-public class ConsultaDAOImpl implements ConsultaDAO{
+public class ConsultaDAOImpl implements IConsultaDAO{
     
     Connection conexion;
     PreparedStatement ps;
@@ -44,7 +44,7 @@ public class ConsultaDAOImpl implements ConsultaDAO{
             ps.setString(2, con.getFecha());
             ps.setString(3,con.getObservacion());
             ps.setString(4, con.getReceta());
-            ps.setInt(5, con.getRela_pac());
+            ps.setInt(5, con.getId_paciente());
             
             ps.executeUpdate();
 

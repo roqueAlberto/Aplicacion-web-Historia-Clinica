@@ -6,7 +6,7 @@ import java.util.List;
  *
  * @author Roque
  */
-public interface ConsultaDAO {
+public interface IConsultaDAO {
 
     //METODOS
     public List listar(int id);

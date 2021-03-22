@@ -6,8 +6,6 @@
 package Modelo.Paciente;
 
 import Conexion.Pool;
-import Modelo.ObraSocial.Obra_Social;
-import Modelo.Sexo.Sexo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +17,7 @@ import java.util.List;
  *
  * @author Roque
  */
-public class PacienteDAOImpl implements PacienteDAO{
+public class PacienteDAOImpl implements IPacienteDAO{
 
     Connection conexion;
     PreparedStatement ps;
@@ -102,11 +100,11 @@ public class PacienteDAOImpl implements PacienteDAO{
             ps.setString(7, pac.getDomicilio());
             ps.setString(8, pac.getLugar_trabajo());
             ps.setString(9, pac.getAntecedentes());
-            ps.setString(10, pac.getAlergico());
+            ps.setString(10, pac.getAlergia());
             ps.setString(11, pac.getMedicamento());
             ps.setString(12, pac.getResponsable());
-            ps.setInt(13, pac.getRela_sexo());
-            ps.setInt(14, pac.getRela_Obra_social());
+            ps.setInt(13, pac.getId_sexo());
+            ps.setInt(14, pac.obra_social.getId_social());
 
             ps.executeUpdate();
 
@@ -130,7 +128,7 @@ public class PacienteDAOImpl implements PacienteDAO{
     
     // BUSQUEDA DE PACIENTE MEDIANTE DNI
     @Override
-    public Paciente buscar(String dni) {
+    public Paciente getPaciente(String dni) {
 
         Paciente paciente = new Paciente();
 
@@ -204,11 +202,11 @@ public class PacienteDAOImpl implements PacienteDAO{
                 paci.setDomicilio(rs.getString(6));
                 paci.setLugar_trabajo(rs.getString(7));
                 paci.setAntecedentes(rs.getString(8));
-                paci.setAlergico(rs.getString(9));
+                paci.setAlergia(rs.getString(9));
                 paci.setMedicamento(rs.getString(10));
                 paci.setResponsable(rs.getString(11));
-                paci.setRela_sexo(rs.getInt(12));
-                paci.setRela_Obra_social(rs.getInt(13));
+                paci.setId_sexo(rs.getInt(12));
+                paci.obra_social.setId_social(rs.getInt(13));
 
             }
 
@@ -253,11 +251,11 @@ public class PacienteDAOImpl implements PacienteDAO{
             ps.setString(7, p.getDomicilio());
             ps.setString(8, p.getLugar_trabajo());
             ps.setString(9, p.getAntecedentes());
-            ps.setString(10, p.getAlergico());
+            ps.setString(10, p.getAlergia());
             ps.setString(11, p.getMedicamento());
             ps.setString(12, p.getResponsable());
-            ps.setInt(13, p.getRela_sexo());
-            ps.setInt(14, p.getRela_Obra_social());
+            ps.setInt(13, p.getId_sexo());
+            ps.setInt(14, p.obra_social.getId_social());
 
             ps.setInt(15, p.getId_paciente());
 
@@ -404,13 +402,13 @@ public class PacienteDAOImpl implements PacienteDAO{
 
     //LISTAR TODOS LOS PACIENTES
     @Override
-    public List listar() {
+    public ArrayList<Paciente> listar() {
 
-        List<Paciente> listar_p = new ArrayList<>();
+        ArrayList<Paciente> listar_p = new ArrayList<>();
 
         Paciente p;
 
-        String sql = "SELECT apellido,nombre,dni,edad,celular,desc_osocial,id_paciente FROM paciente INNER JOIN obra_social ON paciente.rela_obrasocial = obra_social.id_osocial";
+        String sql = "SELECT p.apellido,p.nombre,p.dni,p.edad,p.celular,p.id_paciente FROM paciente p ";
 
         try {
 
@@ -429,8 +427,8 @@ public class PacienteDAOImpl implements PacienteDAO{
                 p.setDni(rs.getString(3));
                 p.setEdad(rs.getInt(4));
                 p.setCelular(rs.getString(5));
-                p.setDesc_obraSocial(rs.getString(6));
-                p.setId_paciente(rs.getInt(7));
+              
+                p.setId_paciente(rs.getInt(6));
 
                 listar_p.add(p);
 
@@ -537,6 +535,53 @@ public class PacienteDAOImpl implements PacienteDAO{
         }
          
         return cantidad;
+    }
+    
+    
+    @Override
+        public List listarSexo() {
+
+        List l_sexo = new ArrayList<>();
+        Paciente paciente;
+
+        String sql = "SELECT * FROM sexo";
+
+        try {
+
+            conexion = getConnection();
+
+            ps = conexion.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                paciente = new Paciente();
+
+                paciente.setId_sexo(rs.getInt(1));
+                paciente.setDesc_sexo(rs.getString(2));
+
+                l_sexo.add(paciente);
+
+            }
+
+        } catch (SQLException e) {
+
+        } finally {
+
+            try {
+
+                ps.close();
+                rs.close();
+                Pool.closeConexion(conexion);
+
+            } catch (SQLException e) {
+
+            }
+
+        }
+
+        return l_sexo;
+
     }
     
 }
